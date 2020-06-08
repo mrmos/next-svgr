@@ -1,9 +1,9 @@
-const withSvg = (nextConfig = {}, nextComposePlugins = {}) => {
+const withSvg = (svgrOpts = {}, nextConfig = {}, nextComposePlugins = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
       config.module.rules.push({
         test: /\.svg$/,
-        use: ["@svgr/webpack"]
+        use: [{ loader: "@svgr/webpack", options: svgrOpts }],
       });
 
       if (typeof nextConfig.webpack === "function") {
@@ -11,7 +11,7 @@ const withSvg = (nextConfig = {}, nextComposePlugins = {}) => {
       }
 
       return config;
-    }
+    },
   });
 };
 
