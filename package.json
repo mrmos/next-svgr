@@ -1,6 +1,6 @@
 {
   "name": "@mimio/next-svgr",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Plugin for NextJS to use SVG with svgr.",
   "main": "index.js",
   "repository": "git@github.com:Anomen/next-svgr.git",
